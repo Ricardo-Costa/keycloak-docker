@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.0.1
+    container_name: keycloak
+    network_mode: host
+    entrypoint: ["/opt/keycloak/bin/kc.sh", "start-dev"]
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    restart: always
+    user: root
+    volumes:
+      - .local/keycloak/:/opt/keycloak/data/
