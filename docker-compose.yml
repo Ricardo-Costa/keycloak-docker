@@ -14,3 +14,27 @@ services:
     user: root
     volumes:
       - .local/keycloak/:/opt/keycloak/data/
+
+  client-1:
+    image: node:16.8.0-alpine3.13
+    container_name: client-1
+    tty: true
+    network_mode: host
+    entrypoint: ["/bin/sh", "/app/scripts/entrypoint.sh"]
+    environment:
+      - PORT=3001
+    working_dir: /app
+    volumes:
+      - ./apps/client-1/:/app
+
+  client-2:
+    image: node:16.8.0-alpine3.13
+    container_name: client-2
+    tty: true
+    network_mode: host
+    entrypoint: ["/bin/sh", "/app/scripts/entrypoint.sh"]
+    environment:
+      - PORT=3002
+    working_dir: /app
+    volumes:
+      - ./apps/client-2/:/app
