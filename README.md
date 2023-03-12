@@ -16,3 +16,5 @@
 **References**
 - https://www.keycloak.org
 - https://www.youtube.com/watch?v=rgcHXpxxaZ0&t=855s&ab_channel=FullCycle
+- https://www.youtube.com/watch?v=lBTZjEHeB4c&ab_channel=FullCycle
+- https://jsoneditoronline.org/
